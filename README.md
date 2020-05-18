@@ -10,7 +10,7 @@ Shortcode can be changed in plugin settings.
 
 # Screen shot
 
-![screenshot](screenshot.png)
+![screenshot](screenshot-1.png)
 
 # Todo
 
