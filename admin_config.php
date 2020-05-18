@@ -8,14 +8,14 @@ add_action('admin_init', 'heimu_settings_init');
 
 function heimu_add_admin_menu()
 {
-    add_submenu_page('plugins.php', __('黑幕', 'Heimu'), __('黑幕', 'Heimu'),
+    add_submenu_page('options-general.php', __('黑幕', 'Heimu'), __('黑幕', 'Heimu'),
         'manage_options', 'heimu', 'heimu_options_page');
     add_filter('plugin_action_links_' . HEIMU_BASE_NAME, 'heimu_action_links', 10, 2);
 }
 
 function heimu_action_links($links, $file)
 {
-    $settings_link = '<a href="plugins.php?page=heimu">' . __('设置', 'Heimu') . '</a>';
+    $settings_link = '<a href="options-general.php?page=heimu">' . __('设置', 'Heimu') . '</a>';
     array_unshift($links, $settings_link);
     return $links;
 }
@@ -54,6 +54,14 @@ function heimu_settings_init()
         'heimu_config_page',
         'heimu_pluginPage_section'
     );
+
+    add_settings_field(
+        'heimu_checkbox_field_1',
+        __('允许评论区使用黑幕', 'Heimu'),
+        'heimu_checkbox_heimu_comment_shortcode_render',
+        'heimu_config_page',
+        'heimu_pluginPage_section'
+    );
 }
 
 function heimu_text_field_heimu_shortcode_render()
@@ -85,6 +93,19 @@ function heimu_checkbox_heimu_blur_render()
            name='heimu_settings[blur]' <?php checked($blur, 1); ?>
            value='1'>
     <p><?php echo __('使用模糊效果代替纯黑的黑幕。不支持 IE 与部分早期浏览器。', 'Heimu'); ?></p>
+    <?php
+}
+
+function heimu_checkbox_heimu_comment_shortcode_render()
+{
+    global $heimu_options;
+    $comment = isset($heimu_options['comment_shortcode']) and $heimu_options['comment_shortcode'] == '1';
+    ?>
+    <input type='checkbox'
+           name='heimu_settings[comment_shortcode]' <?php checked($comment, 1); ?>
+           value='1'>
+    <p><?php echo __('本选项开启后则允许在评论区中使用黑幕 Shortcode。', 'Heimu'); ?></p>
+    <p><?php echo __('注意，出于安全考虑，本选项只对黑幕 Shortcode 生效，其他 Shortcode 在评论区依旧无法使用。', 'Heimu'); ?></p>
     <?php
 }
 
