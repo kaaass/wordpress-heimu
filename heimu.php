@@ -3,13 +3,13 @@
 Plugin Name: Heimu
 Plugin URI: https://blog.kaaass.net/archives/1372
 Description: Add heimu and its short code for your passage.
-Version: 1.0.0
+Version: 1.0.1
 Author: KAAAsS
 Author URI: https://kaaass.net
 License: MIT License
 */
 
-define('HEIMU_ASSETS_VERSION', '1.0.0');
+define('HEIMU_ASSETS_VERSION', '1.0.1');
 define('HEIMU_BASE_NAME', plugin_basename(__FILE__));
 
 $default_options = array(
@@ -39,7 +39,14 @@ function heimu_shortcode_handler($atts, $content = null)
 
     wp_enqueue_style('heimu');
 
-    return '<span class="heimu" title="' . $heimu_options['heimu_float_tips'] . '">' . do_shortcode($content) . '</span>';
+    if (isset($heimu_options['blur']) and $heimu_options['blur'] == '1') {
+        $class = 'heimu-blur';
+    } else {
+        $class = 'heimu';
+    }
+
+    return '<span class="' . $class . '" title="' . $heimu_options['heimu_float_tips']
+        . '">' . do_shortcode($content) . '</span>';
 }
 
 add_shortcode($heimu_options['heimu_shortcode'], 'heimu_shortcode_handler');

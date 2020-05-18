@@ -46,6 +46,14 @@ function heimu_settings_init()
         'pluginPage',
         'heimu_pluginPage_section'
     );
+
+    add_settings_field(
+        'heimu_checkbox_field_0',
+        __('启用模糊黑幕', 'Heimu'),
+        'heimu_checkbox_heimu_blur_render',
+        'pluginPage',
+        'heimu_pluginPage_section'
+    );
 }
 
 function heimu_text_field_heimu_shortcode_render()
@@ -68,6 +76,17 @@ function heimu_text_field_heimu_float_tips_render()
 
 }
 
+function heimu_checkbox_heimu_blur_render()
+{
+    global $heimu_options;
+    $blur = isset($heimu_options['blur']) and $heimu_options['blur'] == '1';
+    ?>
+    <input type='checkbox'
+           name='heimu_settings[blur]' <?php checked($blur, 1); ?>
+           value='1'>
+    <p><?php echo __('使用模糊效果代替纯黑的黑幕。不支持 IE 与部分早期浏览器。', 'Heimu'); ?></p>
+    <?php
+}
 
 function heimu_settings_section_callback()
 {

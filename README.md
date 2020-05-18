@@ -10,9 +10,11 @@ Shortcode can be changed in plugin settings.
 
 # Screen shot
 
-![screenshot](screenshot-1.png)
+![screenshot](assets/screenshot-1.png)
+
+![screenshot](assets/screenshot-2.png)
 
 # Todo
 
 - [ ] Support i18n
-- [ ] Support blur effect
+- [x] Support blur effect

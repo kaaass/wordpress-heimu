@@ -4,7 +4,7 @@ Donate link: https://blog.kaaass.net/about/donate-me
 Tags: 黑幕, heimu
 Requires at least: 3.9
 Tested up to: 5.4
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 Requires PHP: 5.3
 License: GPL2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -26,7 +26,11 @@ Heimu is a mask on the text, visible only when the mouse moves over it
 == Screenshots ==
 
 1. Heimu example
+2. Heimu blur example
 
 == Changelog ==
+= 1.0.1 =
+* Support blur heimu
+
 = 1.0.0 =
 * Support basic heimu
