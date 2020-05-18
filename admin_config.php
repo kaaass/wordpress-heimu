@@ -22,20 +22,20 @@ function heimu_action_links($links, $file)
 
 function heimu_settings_init()
 {
-    register_setting('pluginPage', 'heimu_settings');
+    register_setting('heimu_config_page', 'heimu_settings');
 
     add_settings_section(
         'heimu_pluginPage_section',
         __('基本配置', 'Heimu'),
         'heimu_settings_section_callback',
-        'pluginPage'
+        'heimu_config_page'
     );
 
     add_settings_field(
         'heimu_text_field_1',
         __('黑幕 Shortcode', 'Heimu'),
         'heimu_text_field_heimu_shortcode_render',
-        'pluginPage',
+        'heimu_config_page',
         'heimu_pluginPage_section'
     );
 
@@ -43,7 +43,7 @@ function heimu_settings_init()
         'heimu_text_field_2',
         __('黑幕悬浮提示', 'Heimu'),
         'heimu_text_field_heimu_float_tips_render',
-        'pluginPage',
+        'heimu_config_page',
         'heimu_pluginPage_section'
     );
 
@@ -51,7 +51,7 @@ function heimu_settings_init()
         'heimu_checkbox_field_0',
         __('启用模糊黑幕', 'Heimu'),
         'heimu_checkbox_heimu_blur_render',
-        'pluginPage',
+        'heimu_config_page',
         'heimu_pluginPage_section'
     );
 }
@@ -102,8 +102,8 @@ function heimu_options_page()
         <h2>黑幕</h2>
 
         <?php
-        settings_fields('pluginPage');
-        do_settings_sections('pluginPage');
+        settings_fields('heimu_config_page');
+        do_settings_sections('heimu_config_page');
         submit_button();
         ?>
 
