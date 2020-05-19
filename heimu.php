@@ -45,8 +45,14 @@ function heimu_shortcode_handler($atts, $content = null)
         $class = 'heimu';
     }
 
-    return '<span class="' . $class . '" title="' . $heimu_options['heimu_float_tips']
-        . '">' . do_shortcode($content) . '</span>';
+    if (empty($heimu_options['heimu_float_tips'])) {
+        $title = '';
+    } else {
+        $title = ' title="' . $heimu_options['heimu_float_tips'] . '"';
+    }
+
+    return '<span class="' . $class . '"' .
+        $title . '>' . do_shortcode($content) . '</span>';
 }
 
 function heimu_shortcode_register()

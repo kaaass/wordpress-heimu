@@ -32,6 +32,7 @@ Heimu is a mask on the text, visible only when the mouse moves over it
 = 1.0.2 =
 * Support heimu in comment
 * Move config page from Plugin to Settings
+* Fix wrong behavior for empty title
 
 = 1.0.1 =
 * Support blur heimu
