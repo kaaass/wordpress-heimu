@@ -20,7 +20,10 @@ Shortcode can be changed in plugin settings.
 
 ![screenshot](assets/screenshot-2.png)
 
+![screenshot](assets/screenshot-3.png)
+
 # Todo
 
 - [ ] Support i18n
 - [x] Support blur effect
+- [x] Support block editor

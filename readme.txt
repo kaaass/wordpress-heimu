@@ -27,6 +27,7 @@ Heimu is a mask on the text, visible only when the mouse moves over it
 
 1. Heimu example
 2. Heimu blur example
+3. Block editor support
 
 == Changelog ==
 = 1.1.0 =
