@@ -1,0 +1,15 @@
+/**
+ * Heimu Plugin - Plugin
+ */
+
+heimu {
+    display: inline;
+    background-color: #252525 !important;
+    color: #fff !important;
+    text-shadow: none;
+}
+
+heimu a,
+a heimu {
+    color: #add8e6 !important;
+}

@@ -1,0 +1,28 @@
+{
+  "name": "heimu",
+  "version": "1.0.2",
+  "description": "A 黑幕(black curtain) plugin for WordPress.",
+  "main": "build/index.js",
+  "scripts": {
+    "start": "wp-scripts start",
+    "build": "wp-scripts build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kaaass/wordpress-heimu.git"
+  },
+  "author": "KAAAsS",
+  "license": "GPL-2.0-only",
+  "bugs": {
+    "url": "https://github.com/kaaass/wordpress-heimu/issues"
+  },
+  "homepage": "https://github.com/kaaass/wordpress-heimu#readme",
+  "devDependencies": {
+    "@wordpress/scripts": "9.1.0"
+  },
+  "dependencies": {
+    "@wordpress/keyboard-shortcuts": "^1.5.0",
+    "@wordpress/rich-text": "^3.16.0"
+  }
+}

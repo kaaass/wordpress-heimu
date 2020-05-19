@@ -25,7 +25,7 @@ function heimu_settings_init()
     register_setting('heimu_config_page', 'heimu_settings');
 
     add_settings_section(
-        'heimu_pluginPage_section',
+        'heimu_section_basic',
         __('基本配置', 'Heimu'),
         'heimu_settings_section_callback',
         'heimu_config_page'
@@ -36,7 +36,7 @@ function heimu_settings_init()
         __('黑幕 Shortcode', 'Heimu'),
         'heimu_text_field_heimu_shortcode_render',
         'heimu_config_page',
-        'heimu_pluginPage_section'
+        'heimu_section_basic'
     );
 
     add_settings_field(
@@ -44,7 +44,7 @@ function heimu_settings_init()
         __('黑幕悬浮提示', 'Heimu'),
         'heimu_text_field_heimu_float_tips_render',
         'heimu_config_page',
-        'heimu_pluginPage_section'
+        'heimu_section_basic'
     );
 
     add_settings_field(
@@ -52,7 +52,7 @@ function heimu_settings_init()
         __('启用模糊黑幕', 'Heimu'),
         'heimu_checkbox_heimu_blur_render',
         'heimu_config_page',
-        'heimu_pluginPage_section'
+        'heimu_section_basic'
     );
 
     add_settings_field(
@@ -60,7 +60,22 @@ function heimu_settings_init()
         __('允许评论区使用黑幕', 'Heimu'),
         'heimu_checkbox_heimu_comment_shortcode_render',
         'heimu_config_page',
-        'heimu_pluginPage_section'
+        'heimu_section_basic'
+    );
+
+    add_settings_section(
+        'heimu_section_guten',
+        __('区块编辑器', 'Heimu'),
+        'heimu_settings_section_callback',
+        'heimu_config_page'
+    );
+
+    add_settings_field(
+        'heimu_checkbox_enable_guten',
+        __('禁用区块编辑器支持', 'Heimu'),
+        'heimu_checkbox_enable_guten_render',
+        'heimu_config_page',
+        'heimu_section_guten'
     );
 }
 
@@ -106,6 +121,19 @@ function heimu_checkbox_heimu_comment_shortcode_render()
            value='1'>
     <p><?php echo __('本选项开启后则允许在评论区中使用黑幕 Shortcode。', 'Heimu'); ?></p>
     <p><?php echo __('注意，出于安全考虑，本选项只对黑幕 Shortcode 生效，其他 Shortcode 在评论区依旧无法使用。', 'Heimu'); ?></p>
+    <?php
+}
+
+function heimu_checkbox_enable_guten_render()
+{
+    global $heimu_options;
+    $guten = isset($heimu_options['disable_guten']) and $heimu_options['disable_guten'] == '1';
+    ?>
+    <input type='checkbox'
+           name='heimu_settings[disable_guten]' <?php checked($guten, 1); ?>
+           value='1'>
+    <p><?php echo __('本选项开启后则禁止在区块编辑器中使用可视化编辑黑幕，并关闭快捷键 <code>Ctrl + H</code>。', 'Heimu'); ?></p>
+    <p><?php echo __('注意，由于目前 WordPress API 所限，因此可视化编辑目前采用的是 Html 标签进行实现。因此关闭时，您通过可视化编辑产生的黑幕都将失效。', 'Heimu'); ?></p>
     <?php
 }
 
