@@ -4,7 +4,7 @@ Donate link: https://blog.kaaass.net/about/donate-me
 Tags: 黑幕, heimu
 Requires at least: 3.9
 Tested up to: 5.4
-Stable tag: 1.1.0
+Stable tag: 1.1.0-hotfix
 Requires PHP: 5.3
 License: GPL2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -30,6 +30,9 @@ Heimu is a mask on the text, visible only when the mouse moves over it
 3. Block editor support
 
 == Changelog ==
+= 1.1.0-hotfix =
+* Fix heimu in pure guten env
+
 = 1.1.0 =
 * Support heimu in Block Editor
 

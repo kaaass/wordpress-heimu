@@ -3,7 +3,7 @@
 Plugin Name: Heimu
 Plugin URI: https://blog.kaaass.net/archives/1372
 Description: Add heimu and its short code for your passage.
-Version: 1.1.0
+Version: 1.1.0-hotfix
 Author: KAAAsS
 Author URI: https://kaaass.net
 License: MIT License
