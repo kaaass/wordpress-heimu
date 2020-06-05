@@ -35,6 +35,7 @@ add_action('enqueue_block_editor_assets', 'heimu_guten_enqueue');
 
 function heimu_guten_tag($content)
 {
+    wp_enqueue_style('heimu');
     global $heimu_wrapper;
     $content = str_replace([
         '<heimu>',
